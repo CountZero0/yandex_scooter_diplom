@@ -1,4 +1,5 @@
 Задание 1.
+Выведи список логинов курьеров с количеством их заказов в статусе «В доставке» (поле inDelivery = true)
 SELECT c.login,
        COUNT(DISTINCT(o."courierId"))
 FROM "Orders" AS o
@@ -6,6 +7,7 @@ FROM "Orders" AS o
 WHERE "inDelivery" = True
 GROUP BY c.login;
 Задание 2.
+Выведи все трекеры заказов и их статусы. 
 SELECT DISTINCT(o.track),
        CASE
            WHEN o.finished = true THEN '2'
